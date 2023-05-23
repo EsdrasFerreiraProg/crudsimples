@@ -1,0 +1,32 @@
+{
+  "name": "crudsimples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsdrasFerreiraProg/crudsimples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsdrasFerreiraProg/crudsimples/issues"
+  },
+  "homepage": "https://github.com/EsdrasFerreiraProg/crudsimples#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "logger": "^0.0.1",
+    "mongoose": "^7.2.0",
+    "nodemon": "^2.0.22",
+    "winston": "^3.8.2"
+  }
+}

@@ -29,11 +29,27 @@ router.get('/api/users', async (req, res)=>{
 })
 
 router.get('/api/users/:key', async (req, res)=>{
-    
+    let register = "";
+
+    await mongo().then(async (mongoose)=>{
+        try{
+            const users = await userSchema.findOne({key: req.params.key});
+
+            register = users;
+
+            if(register != ""){
+                logger.info(`Got the desired user ${register.value.nome} successfully`);
+            }
+        }catch(e){
+            logger.error("Could not get all users successfully");
+        }
+        
+    })
+
+    res.status(500).json(register);
 })
 
 router.post('/api/users', async (req, res)=>{
-
 
 });
 

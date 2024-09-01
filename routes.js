@@ -29,7 +29,32 @@ router.get('/api/users', async (req, res)=>{
 })
 
 router.get('/api/users/:key', async (req, res)=>{
- 
+    let register = "";
+    const key = req.params.key;
+
+    await mongo().then(async (mongoose)=>{
+        try{
+            const users = await userSchema.findOne({key});
+
+            register = users;
+
+            if(register != "" && register != null){
+                res.status(200).json(register);
+                logger.info("Got the user with key " + key + " successfully");
+
+            }else{
+                logger.error("Could not get the specified user: " + key + " successfully");
+                res.status(200).json({message: "Could not get the specified user with key: " + key});
+            }
+
+        }catch(e){
+            
+            logger.error("Could not get the specified user: " + key + " successfully, error" + e);
+        }
+
+        console.log(users);
+        
+    })
 
   
 })

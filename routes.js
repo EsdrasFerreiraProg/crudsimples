@@ -19,13 +19,14 @@ router.get('/api/users', async (req, res)=>{
             if(register != ""){
                 logger.info("Got all users successfully");
             }
+
         }catch(e){
             logger.error("Could not get all users successfully");
         }
         
     })
 
-    res.status(500).json(register);
+    res.status(200).json(register);
 })
 
 router.get('/api/users/:key', async (req, res)=>{

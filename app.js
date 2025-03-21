@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(routes);
+
 const logger = require("./logger/logger.js");
 
 
